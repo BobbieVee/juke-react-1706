@@ -1,7 +1,8 @@
 import React from 'react';
 
 const AllAlbums = (props) => {
-	const { albums } = props;
+	const { albums, handleClick } = props;
+	
 		return (			
 	      <div className="col-xs-10">
 	      	<h3>Albums</h3>
@@ -9,8 +10,8 @@ const AllAlbums = (props) => {
 	        { albums.map(album => {
 	        	return (	        		
 	        		<div key={ album.id } className="col-xs-4">							
-					      <a className="thumbnail" href="#">
-					        <img src="http://placeholdit.imgix.net/~text?txtsize=33&txt=ALBUMoneIMAGE&w=300&h=300" />
+					      <a className="thumbnail" href="#" onClick={ () => handleClick(album) }>
+					        <img src={ album.imageUrl } />
 					        <div className="caption">
 					          <h5>
 					            <span>{ album.name }</span>
